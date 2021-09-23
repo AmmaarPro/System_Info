@@ -1,0 +1,31 @@
+import platform
+import socket
+import re
+import uuid
+import psutil
+import time
+
+p =platform.system()
+pv =platform.version()
+ae =platform.machine()
+hn =socket.gethostname()
+ip =socket.gethostbyname(socket.gethostname())
+ma =':'.join(re.findall('..', '%012x' % uuid.getnode()))
+pro =platform.processor()
+ram =str(round(psutil.virtual_memory().total / (1024.0 **3)))+" GB"
+
+print('System = ' + p)
+time.sleep(1)
+print('Version = ' + pv)
+time.sleep(1)
+print('Architecture = ' + ae)
+time.sleep(1)
+print('PC Name = '+ hn)
+time.sleep(1)
+print('IP Adress = ' + ip)
+time.sleep(1)
+print('Mac Address = ' + ma)
+time.sleep(1)
+print('Processor = ' + pro)
+time.sleep(1)
+print('RAM = ' + ram)
